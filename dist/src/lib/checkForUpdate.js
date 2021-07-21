@@ -21,51 +21,7 @@ function checkForUpdate() {
         var currentVersion, app, client, data, latestVersion, needsUpdate, msg, lastVersion;
         return tslib_1.__generator(this, function (_a) {
             switch (_a.label) {
-                case 0:
-                    currentVersion = package_json_1.version;
-                    app = package_json_1.name;
-                    client = new npm_registry_client_1.default({ log: { verbose: noop, info: noop, http: noop } });
-                    return [4 /*yield*/, new Promise(function (resolve, reject) {
-                            client.get("https://registry.npmjs.org/" + app + "/latest", { timeout: 1000 }, function (error, data) {
-                                if (error) {
-                                    reject(error);
-                                }
-                                else {
-                                    resolve(data);
-                                }
-                            });
-                        })];
-                case 1:
-                    data = _a.sent();
-                    latestVersion = data.version;
-                    needsUpdate = semver_1.gt(latestVersion, currentVersion);
-                    log_1.log('needs update? ' + (needsUpdate ? 'yes' : 'no'));
-                    if (!needsUpdate) return [3 /*break*/, 2];
-                    msg = [
-                        cli_color_1.white('Update available '),
-                        cli_color_1.blue(currentVersion),
-                        cli_color_1.white(' → '),
-                        cli_color_1.green(latestVersion + '\n'),
-                        cli_color_1.white('Run: '),
-                        cli_color_1.green('npm i -g ' + app),
-                        cli_color_1.white(' to update'),
-                    ].join('');
-                    showBorderedMessage_1.showBorderedMessage(40, msg);
-                    return [3 /*break*/, 5];
-                case 2: return [4 /*yield*/, lastVersion_1.getLastVersion()];
-                case 3:
-                    lastVersion = _a.sent();
-                    if (!semver_1.gt(currentVersion, lastVersion)) return [3 /*break*/, 5];
-                    log_1.log('user updated, updating db with version');
-                    // give them release notes
-                    showBorderedMessage_1.showBorderedMessage(110, cli_color_1.white(getChangeLog()));
-                    // update the state to reflect that the last version run is the current version
-                    log_1.log('db');
-                    return [4 /*yield*/, lastVersion_1.setLastVersion(currentVersion)];
-                case 4:
-                    _a.sent();
-                    _a.label = 5;
-                case 5: return [2 /*return*/];
+                default: return [2 /*return*/];
             }
         });
     });
