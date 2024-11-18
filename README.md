@@ -6,7 +6,7 @@
 
 /opt/homebrew/lib/node_modules/alks/dist/src/lib/checkForUpdate.js
 
-```
+```shell
 tee /opt/homebrew/lib/node_modules/alks/dist/src/lib/checkForUpdate.js > /dev/null <<EOL
 function checkForUpdate() {
     return [2 /*return*/];
