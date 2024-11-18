@@ -1,5 +1,27 @@
 # ALKS CLI
 
+
+
+## Vincent Lee Optimize
+
+/opt/homebrew/lib/node_modules/alks/dist/src/lib/checkForUpdate.js
+
+```
+tee /opt/homebrew/lib/node_modules/alks/dist/src/lib/checkForUpdate.js > /dev/null <<EOL
+function checkForUpdate() {
+    return [2 /*return*/];
+}
+exports.checkForUpdate = checkForUpdate;
+EOL
+```
+
+
+
+
+
+
+## Other
+
 [![NPM](https://nodei.co/npm/alks.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/alks/)
 
 [![Build Status](https://travis-ci.org/Cox-Automotive/alks-cli.svg?branch=master)](https://travis-ci.org/Cox-Automotive/alks-cli)
